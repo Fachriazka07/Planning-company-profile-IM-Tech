@@ -1,0 +1,1077 @@
+openapi: 3.0.3
+info:
+  title: IM Tech Company Profile API
+  description: |
+    REST API untuk IM Tech Company Profile website dan Admin Dashboard.
+
+    ## Authentication
+    - Public endpoints: No auth required
+    - Admin endpoints: Bearer token (Supabase JWT)
+
+    ## Response Format
+    All responses follow the standard envelope:
+    ```json
+    {
+      "data": {...},
+      "meta": {...}
+    }
+    ```
+
+  version: 1.0.0
+  contact:
+    name: IM Tech Solution
+    email: info@imtech.co.id
+
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Development
+  - url: https://imtech.co.id/api/v1
+    description: Production
+
+tags:
+  - name: Auth
+    description: Authentication endpoints
+  - name: Portfolios
+    description: Portfolio management (public & admin)
+  - name: Blogs
+    description: Blog management (public & admin)
+  - name: Team
+    description: Team member management
+  - name: Services
+    description: Company services
+  - name: Contacts
+    description: Contact form submissions
+  - name: Users
+    description: User management (admin only)
+  - name: Upload
+    description: File upload
+
+paths:
+  # ==================== AUTH ====================
+  /auth/login:
+    post:
+      tags: [Auth]
+      summary: Login with email and password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /auth/logout:
+    post:
+      tags: [Auth]
+      summary: Logout and invalidate session
+      security:
+        - bearerAuth: []
+      responses:
+        '204':
+          description: Logged out successfully
+
+  /auth/me:
+    get:
+      tags: [Auth]
+      summary: Get current user profile
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Current user data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+
+  # ==================== PUBLIC PORTFOLIOS ====================
+  /portfolios:
+    get:
+      tags: [Portfolios]
+      summary: List published portfolios
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+        - name: category
+          in: query
+          schema:
+            type: string
+          description: Filter by category slug
+      responses:
+        '200':
+          description: Paginated list of portfolios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PortfolioListResponse'
+
+  /portfolios/{slug}:
+    get:
+      tags: [Portfolios]
+      summary: Get portfolio by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Portfolio details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PortfolioResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /portfolio-categories:
+    get:
+      tags: [Portfolios]
+      summary: List portfolio categories
+      responses:
+        '200':
+          description: List of categories
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryListResponse'
+
+  # ==================== ADMIN PORTFOLIOS ====================
+  /admin/portfolios:
+    get:
+      tags: [Portfolios]
+      summary: List all portfolios (admin)
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [draft, published]
+      responses:
+        '200':
+          description: Paginated list including drafts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PortfolioListResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+    post:
+      tags: [Portfolios]
+      summary: Create portfolio
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PortfolioInput'
+      responses:
+        '201':
+          description: Portfolio created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PortfolioResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /admin/portfolios/{id}:
+    get:
+      tags: [Portfolios]
+      summary: Get portfolio by ID (admin)
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Portfolio details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PortfolioResponse'
+
+    patch:
+      tags: [Portfolios]
+      summary: Update portfolio
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PortfolioInput'
+      responses:
+        '200':
+          description: Portfolio updated
+
+    delete:
+      tags: [Portfolios]
+      summary: Delete portfolio (admin only)
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Portfolio deleted
+        '403':
+          $ref: '#/components/responses/Forbidden'
+
+  # ==================== PUBLIC BLOGS ====================
+  /blogs:
+    get:
+      tags: [Blogs]
+      summary: List published blogs
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+        - name: category
+          in: query
+          schema:
+            type: string
+        - name: tag
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of blogs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlogListResponse'
+
+  /blogs/{slug}:
+    get:
+      tags: [Blogs]
+      summary: Get blog by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Blog details with tags
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlogResponse'
+
+  /blog-categories:
+    get:
+      tags: [Blogs]
+      summary: List blog categories
+      responses:
+        '200':
+          description: List of categories
+
+  /tags:
+    get:
+      tags: [Blogs]
+      summary: List all tags
+      responses:
+        '200':
+          description: List of tags
+
+  # ==================== ADMIN BLOGS ====================
+  /admin/blogs:
+    get:
+      tags: [Blogs]
+      summary: List all blogs (admin)
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Paginated list including drafts
+
+    post:
+      tags: [Blogs]
+      summary: Create blog
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BlogInput'
+      responses:
+        '201':
+          description: Blog created
+
+  /admin/blogs/{id}:
+    patch:
+      tags: [Blogs]
+      summary: Update blog
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Blog updated
+
+    delete:
+      tags: [Blogs]
+      summary: Delete blog (admin only)
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Blog deleted
+
+  # ==================== TEAM ====================
+  /team:
+    get:
+      tags: [Team]
+      summary: List active team members
+      responses:
+        '200':
+          description: Ordered list of team members
+
+  /admin/team:
+    get:
+      tags: [Team]
+      summary: List all team members (admin)
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: All team members including inactive
+
+    post:
+      tags: [Team]
+      summary: Create team member
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamMemberInput'
+      responses:
+        '201':
+          description: Team member created
+
+  /admin/team/{id}:
+    patch:
+      tags: [Team]
+      summary: Update team member
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Team member updated
+
+    delete:
+      tags: [Team]
+      summary: Delete team member
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Team member deleted
+
+  # ==================== SERVICES ====================
+  /services:
+    get:
+      tags: [Services]
+      summary: List active services
+      responses:
+        '200':
+          description: Ordered list of services
+
+  /admin/services:
+    get:
+      tags: [Services]
+      summary: List all services (admin)
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: All services
+
+    post:
+      tags: [Services]
+      summary: Create service
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Service created
+
+  /admin/services/{id}:
+    patch:
+      tags: [Services]
+      summary: Update service
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Service updated
+
+    delete:
+      tags: [Services]
+      summary: Delete service
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Service deleted
+
+  # ==================== CONTACTS ====================
+  /contacts:
+    post:
+      tags: [Contacts]
+      summary: Submit contact form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactInput'
+      responses:
+        '201':
+          description: Contact submitted
+
+  /admin/contacts:
+    get:
+      tags: [Contacts]
+      summary: List contact submissions
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [unread, read, replied]
+      responses:
+        '200':
+          description: Paginated list of contacts
+
+  /admin/contacts/{id}:
+    get:
+      tags: [Contacts]
+      summary: Get contact detail
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Contact details
+
+    patch:
+      tags: [Contacts]
+      summary: Update contact status
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Contact updated
+
+  /admin/contacts/unread-count:
+    get:
+      tags: [Contacts]
+      summary: Get unread count
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Unread count
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+
+  # ==================== USERS ====================
+  /admin/users:
+    get:
+      tags: [Users]
+      summary: List all users (admin only)
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of users
+
+    post:
+      tags: [Users]
+      summary: Create user
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserInput'
+      responses:
+        '201':
+          description: User created
+
+  /admin/users/{id}:
+    get:
+      tags: [Users]
+      summary: Get user detail
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: User details
+
+    patch:
+      tags: [Users]
+      summary: Update user
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: User updated
+
+    delete:
+      tags: [Users]
+      summary: Deactivate user
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: User deactivated
+
+  # ==================== UPLOAD ====================
+  /admin/upload/image:
+    post:
+      tags: [Upload]
+      summary: Upload image
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: Image uploaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadResponse'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Supabase JWT token
+
+  parameters:
+    IdParam:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    PageParam:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+
+    LimitParam:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 10
+        minimum: 1
+        maximum: 50
+
+  schemas:
+    # ==================== AUTH ====================
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+
+    LoginResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            user:
+              $ref: '#/components/schemas/User'
+            session:
+              type: object
+              properties:
+                access_token:
+                  type: string
+                expires_at:
+                  type: string
+                  format: date-time
+
+    # ==================== USER ====================
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        role:
+          type: string
+          enum: [admin, editor, viewer]
+        is_active:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+
+    UserResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/User'
+
+    UserInput:
+      type: object
+      required: [name, email, password, role]
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+        role:
+          type: string
+          enum: [admin, editor, viewer]
+
+    # ==================== PORTFOLIO ====================
+    Portfolio:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        slug:
+          type: string
+        description:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        tech_stack:
+          type: array
+          items:
+            type: string
+        client_name:
+          type: string
+        project_url:
+          type: string
+        status:
+          type: string
+          enum: [draft, published]
+        category:
+          $ref: '#/components/schemas/Category'
+        created_at:
+          type: string
+          format: date-time
+
+    PortfolioResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Portfolio'
+
+    PortfolioListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Portfolio'
+        meta:
+          $ref: '#/components/schemas/PaginationMeta'
+
+    PortfolioInput:
+      type: object
+      required: [title, category_id]
+      properties:
+        title:
+          type: string
+        slug:
+          type: string
+        category_id:
+          type: string
+          format: uuid
+        description:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        tech_stack:
+          type: array
+          items:
+            type: string
+        client_name:
+          type: string
+        project_url:
+          type: string
+        status:
+          type: string
+          enum: [draft, published]
+          default: draft
+
+    # ==================== BLOG ====================
+    Blog:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        slug:
+          type: string
+        content:
+          type: string
+        featured_image:
+          type: string
+        excerpt:
+          type: string
+        reading_time:
+          type: integer
+        status:
+          type: string
+          enum: [draft, published]
+        category:
+          $ref: '#/components/schemas/Category'
+        author:
+          $ref: '#/components/schemas/User'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        published_at:
+          type: string
+          format: date-time
+
+    BlogResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Blog'
+
+    BlogListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Blog'
+        meta:
+          $ref: '#/components/schemas/PaginationMeta'
+
+    BlogInput:
+      type: object
+      required: [title, category_id]
+      properties:
+        title:
+          type: string
+        slug:
+          type: string
+        category_id:
+          type: string
+          format: uuid
+        content:
+          type: string
+        featured_image:
+          type: string
+        excerpt:
+          type: string
+        seo_title:
+          type: string
+          maxLength: 60
+        seo_description:
+          type: string
+          maxLength: 160
+        tags:
+          type: array
+          items:
+            type: string
+            format: uuid
+        status:
+          type: string
+          enum: [draft, published]
+        published_at:
+          type: string
+          format: date-time
+
+    # ==================== CATEGORY & TAG ====================
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        slug:
+          type: string
+
+    CategoryListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+
+    Tag:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        slug:
+          type: string
+
+    # ==================== TEAM ====================
+    TeamMember:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        role:
+          type: string
+        photo_url:
+          type: string
+        bio:
+          type: string
+        linkedin_url:
+          type: string
+        github_url:
+          type: string
+        twitter_url:
+          type: string
+        display_order:
+          type: integer
+        is_active:
+          type: boolean
+
+    TeamMemberInput:
+      type: object
+      required: [name, role]
+      properties:
+        name:
+          type: string
+        role:
+          type: string
+        photo_url:
+          type: string
+        bio:
+          type: string
+        linkedin_url:
+          type: string
+        github_url:
+          type: string
+        twitter_url:
+          type: string
+        display_order:
+          type: integer
+        is_active:
+          type: boolean
+          default: true
+
+    # ==================== CONTACT ====================
+    ContactInput:
+      type: object
+      required: [name, email, message]
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        message:
+          type: string
+        service_interest:
+          type: string
+
+    # ==================== UPLOAD ====================
+    UploadResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            url:
+              type: string
+            filename:
+              type: string
+            size:
+              type: integer
+
+    # ==================== COMMON ====================
+    PaginationMeta:
+      type: object
+      properties:
+        total:
+          type: integer
+        page:
+          type: integer
+        limit:
+          type: integer
+        totalPages:
+          type: integer
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: array
+              items:
+                type: object
+                properties:
+                  field:
+                    type: string
+                  message:
+                    type: string
+
+  responses:
+    Unauthorized:
+      description: Not authenticated
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: UNAUTHORIZED
+              message: Authentication required
+
+    Forbidden:
+      description: Permission denied
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: FORBIDDEN
+              message: You don't have permission to perform this action
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: NOT_FOUND
+              message: Resource not found
+
+    ValidationError:
+      description: Validation failed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: VALIDATION_ERROR
+              message: Validation failed
+              details:
+                - field: title
+                  message: Title is required
