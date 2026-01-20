@@ -133,9 +133,9 @@ export function AboutSection() {
                             )}
                         </div>
 
-                        <button className="text-[#00AAFF] font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                        <Link href="/about" className="text-[#00AAFF] font-medium flex items-center gap-2 hover:gap-3 transition-all">
                             Selengkapnya <ArrowRight className="w-4 h-4" />
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -41,3 +41,12 @@
 
 
 
+
+---
+
+## 2026-01-20
+
+| Waktu | Aktivitas | ID | Keterangan |
+| :---- | :-------- | :-- | :-------------------------- |
+| 20:10 | Create Wireframe | WF-UX03 | About page wireframe created based on Figma |
+| 20:50 | Update Wireframe | WF-UX03 | About page updated with High-Fidelity specs, GSAP animations, and dynamic overlapping layouts |
