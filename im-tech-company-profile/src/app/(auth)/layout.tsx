@@ -1,2 +1,7 @@
-// Placeholder to maintain folder structure
-export { };
+export default function AuthLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
+    return <>{children}</>;
+}

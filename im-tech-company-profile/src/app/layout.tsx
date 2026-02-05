@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import 'remixicon/fonts/remixicon.css';
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -39,10 +38,9 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
 }
+

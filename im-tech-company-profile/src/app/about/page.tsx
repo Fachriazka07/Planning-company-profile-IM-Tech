@@ -1,6 +1,7 @@
+import { Navbar } from "@/components/shared/navbar";
+import { Footer } from "@/components/shared/footer";
 import AboutHero from "@/components/About/AboutHero";
 import VisionMission from "@/components/About/VisionMission";
-import React from "react";
 
 export const metadata = {
     title: "Tentang Kami | IM Tech",
@@ -9,10 +10,14 @@ export const metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-black">
-            <AboutHero />
-            <VisionMission />
-            {/* Other sections will be added here later */}
-        </main>
+        <>
+            <Navbar />
+            <main className="min-h-screen bg-black">
+                <AboutHero />
+                <VisionMission />
+                {/* Other sections will be added here later */}
+            </main>
+            <Footer />
+        </>
     );
 }
