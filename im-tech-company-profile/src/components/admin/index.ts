@@ -1,2 +1,2 @@
 // Admin dashboard components
-export { };
+export {};

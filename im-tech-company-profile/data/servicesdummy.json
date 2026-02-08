@@ -1,42 +1,26 @@
 [
-    {
-        "id": 1,
-        "title": "Web Development",
-        "description": "Website profesional untuk memperkenalkan perusahaan dan layanan Anda kepada calon klien.",
-        "features": [
-            "Desain modern & profesional",
-            "Responsif di semua perangkat",
-            "SEO Friendly"
-        ]
-    },
-    {
-        "id": 2,
-        "title": "Mobile App Development",
-        "description": "Aplikasi mobile profesional untuk memperkenalkan perusahaan dan layanan Anda kepada calon klien.",
-        "features": [
-            "Desain modern & profesional",
-            "Responsif di semua perangkat",
-            "SEO Friendly"
-        ]
-    },
-    {
-        "id": 3,
-        "title": "UI / UX Design",
-        "description": "Website profesional untuk memperkenalkan perusahaan dan layanan Anda kepada calon klien.",
-        "features": [
-            "Desain modern & profesional",
-            "Responsif di semua perangkat",
-            "SEO Friendly"
-        ]
-    },
-    {
-        "id": 4,
-        "title": "Maintenance & Support",
-        "description": "Website profesional untuk memperkenalkan perusahaan dan layanan Anda kepada calon klien.",
-        "features": [
-            "Desain modern & profesional",
-            "Responsif di semua perangkat",
-            "SEO Friendly"
-        ]
-    }
+  {
+    "id": 1,
+    "title": "Web Development",
+    "description": "Website profesional untuk memperkenalkan perusahaan dan layanan Anda kepada calon klien.",
+    "features": ["Desain modern & profesional", "Responsif di semua perangkat", "SEO Friendly"]
+  },
+  {
+    "id": 2,
+    "title": "Mobile App Development",
+    "description": "Aplikasi mobile profesional untuk memperkenalkan perusahaan dan layanan Anda kepada calon klien.",
+    "features": ["Desain modern & profesional", "Responsif di semua perangkat", "SEO Friendly"]
+  },
+  {
+    "id": 3,
+    "title": "UI / UX Design",
+    "description": "Website profesional untuk memperkenalkan perusahaan dan layanan Anda kepada calon klien.",
+    "features": ["Desain modern & profesional", "Responsif di semua perangkat", "SEO Friendly"]
+  },
+  {
+    "id": 4,
+    "title": "Maintenance & Support",
+    "description": "Website profesional untuk memperkenalkan perusahaan dan layanan Anda kepada calon klien.",
+    "features": ["Desain modern & profesional", "Responsif di semua perangkat", "SEO Friendly"]
+  }
 ]

@@ -1,26 +1,26 @@
 [
-    {
-        "id": 1,
-        "category": "Web Development",
-        "title": "E-Commerce Platform",
-        "description": "Platform e-commerce dengan sistem pembayaran terintegrasi dan dashboard admin yang powerful untuk mengelola produk dan transaksi.",
-        "imageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop",
-        "githubUrl": "https://github.com/imtech/ecommerce-platform"
-    },
-    {
-        "id": 2,
-        "category": "Mobile Development",
-        "title": "HealthCare Mobile App",
-        "description": "Aplikasi mobile untuk konsultasi kesehatan online dengan fitur video call dokter, booking jadwal, dan riwayat medis digital.",
-        "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop",
-        "githubUrl": "https://github.com/imtech/healthcare-app"
-    },
-    {
-        "id": 3,
-        "category": "UI/UX Design",
-        "title": "Fintech Dashboard",
-        "description": "Dashboard analitik untuk aplikasi fintech dengan visualisasi data yang intuitif dan laporan keuangan yang komprehensif.",
-        "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
-        "githubUrl": "https://github.com/imtech/fintech-dashboard"
-    }
+  {
+    "id": 1,
+    "category": "Web Development",
+    "title": "E-Commerce Platform",
+    "description": "Platform e-commerce dengan sistem pembayaran terintegrasi dan dashboard admin yang powerful untuk mengelola produk dan transaksi.",
+    "imageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop",
+    "githubUrl": "https://github.com/imtech/ecommerce-platform"
+  },
+  {
+    "id": 2,
+    "category": "Mobile Development",
+    "title": "HealthCare Mobile App",
+    "description": "Aplikasi mobile untuk konsultasi kesehatan online dengan fitur video call dokter, booking jadwal, dan riwayat medis digital.",
+    "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop",
+    "githubUrl": "https://github.com/imtech/healthcare-app"
+  },
+  {
+    "id": 3,
+    "category": "UI/UX Design",
+    "title": "Fintech Dashboard",
+    "description": "Dashboard analitik untuk aplikasi fintech dengan visualisasi data yang intuitif dan laporan keuangan yang komprehensif.",
+    "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
+    "githubUrl": "https://github.com/imtech/fintech-dashboard"
+  }
 ]

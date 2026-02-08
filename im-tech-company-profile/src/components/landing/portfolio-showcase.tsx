@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import { Github } from 'lucide-react';
 
 // BACKEND NOTE: Gantilah import data dummy ini dengan call API dari Supabase/Backend jika sudah siap.
@@ -38,27 +39,18 @@ export function PortfolioShowcase() {
                 </div>
 
                 {/* Portfolio Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[40px] justify-items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
                     {portfolio.map((item) => (
                         <div
                             key={item.id}
                             className="w-full max-w-[363px] h-auto min-h-[357px] bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"
                         >
                             <div className="relative w-full h-[175px] overflow-hidden rounded-t-[6px]">
-                                <Image
-                                    src={item.imageUrl}
-                                    alt={item.title}
-                                    fill
-                                    className="object-cover"
-                                />
+                                <Image src={item.imageUrl} alt={item.title} fill className="object-cover" />
                             </div>
                             <div className="flex flex-col flex-1 p-5">
-                                <span className="text-[14px] text-[#0077FF] mb-2">
-                                    {item.category}
-                                </span>
-                                <h3 className="text-[14px] font-bold text-black mb-2">
-                                    {item.title}
-                                </h3>
+                                <span className="text-[14px] text-[#0077FF] mb-2">{item.category}</span>
+                                <h3 className="text-[14px] font-bold text-black mb-2">{item.title}</h3>
                                 <p className="text-[12px] text-gray-600 leading-relaxed flex-1">
                                     {item.description}
                                 </p>
@@ -80,11 +72,9 @@ export function PortfolioShowcase() {
                 {/* View All Button */}
                 <div className="flex justify-center mt-12">
                     <Link href="/portfolio">
-                        <button
-                            className="w-[237px] h-[51px] bg-black text-white font-medium rounded-md transition-all duration-200 hover:bg-gray-800 hover:shadow-lg"
-                        >
-                            Lihat Semua Proyek
-                        </button>
+                        <Button variant="pill">
+                            Selengkapnya
+                        </Button>
                     </Link>
                 </div>
             </div>

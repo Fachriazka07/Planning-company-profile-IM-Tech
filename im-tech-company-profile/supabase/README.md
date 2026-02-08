@@ -17,6 +17,7 @@ Edge Functions adalah serverless functions yang berjalan di Supabase.
 Dokumentasi: https://supabase.com/docs/guides/functions
 
 Contoh use case:
+
 - Custom authentication logic
 - Complex data processing
 - Third-party API integrations
@@ -38,6 +39,7 @@ Dokumentasi: https://supabase.com/docs/guides/cli/local-development
 ## Environment Variables
 
 Buat file `.env.local` di root project dengan:
+
 ```
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key

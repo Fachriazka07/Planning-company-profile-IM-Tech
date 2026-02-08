@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
 import { Hero } from '@/components/landing/hero';
+import { HighlightServices } from '@/components/landing/highlight-services';
 import { AboutSection } from '@/components/landing/about-section';
 import { SectionDivider } from '@/components/shared/section-divider';
 import { ServicesSection } from '@/components/landing/services-section';
@@ -15,17 +16,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <SectionDivider />
+        <HighlightServices />
         <AboutSection />
-        <SectionDivider />
         <ServicesSection />
-        <SectionDivider />
-        <PortfolioShowcase />
-        <SectionDivider />
-        <InsightSection />
-        <SectionDivider />
         <WorkflowSection />
-        <SectionDivider />
+        <PortfolioShowcase />
+        <InsightSection />
         <ContactSection />
       </main>
       <Footer />

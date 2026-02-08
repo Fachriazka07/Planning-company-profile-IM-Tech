@@ -1,2 +1,2 @@
 // Landing page components
-export { };
+export {};
