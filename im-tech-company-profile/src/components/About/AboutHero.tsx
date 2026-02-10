@@ -1,37 +1,66 @@
+"use client"
+
 import React from 'react';
-import { TitleGradient } from '@/components/shared/title-gradient';
-import GeometricSphere from './GeometricSphere';
+import { motion } from 'framer-motion';
 
 const AboutHero = () => {
-  return (
-    <div className="relative w-full h-screen min-h-[80vh] bg-[#000000] overflow-hidden">
-      <div className="max-w-7xl mx-auto h-full px-6 lg:px-12 flex flex-col items-center justify-center lg:flex-row relative z-10">
-        {/* Left Side: Typography */}
-        <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left z-20">
-          <TitleGradient className="text-[36px] font-bold pb-2" as="h1">
-            Tentang Kami
-          </TitleGradient>
-          <p className="font-poppins font-normal text-base lg:text-lg text-gray-300 leading-relaxed max-w-lg">
-            IM Tech adalah partner teknologi Anda dalam mewujudkan solusi digital yang inovatif.
-            Kami memadukan keahlian teknis dengan desain modern untuk menciptakan website dan
-            aplikasi yang tidak hanya fungsional, tetapi juga memberikan pengalaman pengguna
-            terbaik.
-          </p>
-          <p className="font-poppins font-normal text-base lg:text-lg text-gray-300 leading-relaxed max-w-lg mt-4">
-            Kami percaya pada kolaborasi transparan dan hasil yang terukur. Dari konsep hingga
-            peluncuran, kami memastikan setiap detail mendukung pertumbuhan bisnis Anda jangka
-            panjang.
-          </p>
-        </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-        {/* Right Side: Visual Asset & Overlap */}
-        <div className="w-full lg:w-[45%] relative h-[40vh] lg:h-full flex items-center justify-center">
-          <div className="relative w-[320px] h-[320px] lg:w-[600px] lg:h-[600px]">
-            <GeometricSphere />
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  return (
+    <section
+      className="relative w-full h-[371px] flex items-center overflow-hidden"
+      style={{
+        backgroundImage: 'url(/images/about/background-about.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="container mx-auto px-6 lg:px-24 relative z-10">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="max-w-3xl"
+        >
+          <div className="flex items-stretch">
+            <motion.div
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
+              className="w-[8px] bg-white mr-6 origin-top self-stretch"
+            />
+
+            <div className="flex flex-col justify-center py-4">
+              <motion.h1
+                variants={itemVariants}
+                className="text-[32px] font-semibold text-white mb-4 leading-tight"
+              >
+                Tentang Kami
+              </motion.h1>
+              <motion.p
+                variants={itemVariants}
+                className="text-[20px] font-normal text-white leading-relaxed font-poppins"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!
+              </motion.p>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

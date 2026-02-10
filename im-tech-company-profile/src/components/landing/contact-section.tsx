@@ -61,7 +61,7 @@ export function ContactSection() {
 
                 <div>
                   {/* BACKEND NOTE: Form ini nantinya akan dihubungkan ke API (misal: Resend/Nodemailer) atau database Supabase */}
-                  <Button className="bg-black text-white hover:bg-gray-800 rounded-md px-10 py-6 text-base font-semibold transition-all duration-300 hover:scale-105">
+                  <Button className="w-full bg-black text-white hover:bg-gray-800 rounded-md py-6 text-base font-semibold transition-all duration-300 hover:scale-105">
                     Kirim
                   </Button>
                 </div>

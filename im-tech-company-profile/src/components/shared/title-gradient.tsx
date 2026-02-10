@@ -13,10 +13,16 @@ export function TitleGradient({ children, className, as: Component = 'span' }: T
   return (
     <Component
       className={cn(
-        'bg-gradient-to-r from-[#00AAFF] to-[#1100FF] bg-clip-text text-transparent font-poppins font-semibold',
+        'bg-gradient-to-r from-[#00AAFF] to-[#155DFC] bg-clip-text text-transparent font-poppins font-semibold w-fit',
         className
       )}
+      style={{
+        backgroundImage: 'linear-gradient(90deg, #00AAFF 0%, #155DFC 100%)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+      }}
     >
+
       {children}
     </Component>
   );
