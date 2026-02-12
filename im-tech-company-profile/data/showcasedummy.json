@@ -3,24 +3,176 @@
     "id": 1,
     "category": "Web Development",
     "title": "E-Commerce Platform",
-    "description": "Platform e-commerce dengan sistem pembayaran terintegrasi dan dashboard admin yang powerful untuk mengelola produk dan transaksi.",
-    "imageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop",
-    "githubUrl": "https://github.com/imtech/ecommerce-platform"
+    "description": "Platform e-commerce yang dirancang untuk memudahkan pengelolaan produk transaksi dan pengalaman belanja pengguna. Website ini dibangun dengan tampilan responsif sistem navigasi yang intuitif serta performa yang optimal untuk mendukung penjualan online secara efektif.",
+    "imageUrl": "https://cdn.dribbble.com/userupload/45772269/file/d6b9eb9ece61e4d96e89d53f2dcd3a53.png?resize=1024x768&vertical=center",
+    "githubUrl": "https://github.com/imtech/ecommerce-platform",
+    "websiteUrl": "https://example.com/ecommerce",
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    "overview": "Platform e-commerce yang dirancang untuk memudahkan pengelolaan produk, transaksi, dan pengalaman belanja pengguna. Website ini dibangun dengan tampilan responsif, sistem navigasi yang intuitif, serta performa yang optimal untuk mendukung penjualan online secara efektif.",
+    "problem": [
+      "Pengelolaan inventaris yang tidak efisien menyebabkan seringnya overselling.",
+      "Proses checkout yang rumit dan lambat mengakibatkan tingginya cart abandonment rate.",
+      "Tidak adanya analitik real-time menyulitkan pengambilan keputusan bisnis."
+    ],
+    "solution": [
+      "Mengembangkan sistem manajemen inventaris real-time yang terintegrasi.",
+      "Menyederhanakan proses checkout menjadi 3 langkah mudah dengan berbagai opsi pembayaran.",
+      "Membangun dashboard analitik komprehensif untuk memantau penjualan dan tren produk."
+    ],
+    "features": [
+      { "title": "Real-time Inventory", "description": "Sinkronisasi stok otomatis saat transaksi terjadi." },
+      { "title": "Secure Payment Gateway", "description": "Integrasi dengan Midtrans dan Stripe untuk pembayaran aman." },
+      { "title": "Admin Dashboard", "description": "Pusat kontrol untuk mengelola produk, pesanan, dan pelanggan." },
+      { "title": "Mobile Responsive", "description": "Tampilan yang optimal di semua ukuran layar perangkat." }
+    ],
+    "methodology": [
+      { "title": "Discovery", "description": "Analisis kebutuhan bisnis dan riset kompetitor." },
+      { "title": "Design", "description": "Pembuatan wireframe dan high-fidelity prototype." },
+      { "title": "Development", "description": "Implementasi frontend dan backend menggunakan Next.js & Supabase." },
+      { "title": "Testing", "description": "Uji fungsionalitas, performa, dan keamanan." },
+      { "title": "Launch", "description": "Deployment ke production dan monitoring awal." }
+    ],
+    "challenges": [
+      "Mengintegrasikan sistem pembayaran dengan berbagai metode bank lokal.",
+      "Optimasi performa gambar produk agar loading website tetap cepat.",
+      "Memastikan konsistensi data stok saat traffic tinggi (flash sale)."
+    ],
+    "gallery": [
+      { "title": "Dashboard Home", "imageUrl": "https://cdn.dribbble.com/userupload/45772269/file/d6b9eb9ece61e4d96e89d53f2dcd3a53.png?resize=1024x768&vertical=center" },
+      { "title": "Tablet View", "imageUrl": "https://cdn.dribbble.com/userupload/45772269/file/d6b9eb9ece61e4d96e89d53f2dcd3a53.png?resize=1024x768&vertical=center" },
+      { "title": "Mobile View", "imageUrl": "https://cdn.dribbble.com/userupload/45772269/file/d6b9eb9ece61e4d96e89d53f2dcd3a53.png?resize=1024x768&vertical=center" }
+    ]
   },
   {
     "id": 2,
     "category": "Mobile Development",
     "title": "HealthCare Mobile App",
     "description": "Aplikasi mobile untuk konsultasi kesehatan online dengan fitur video call dokter, booking jadwal, dan riwayat medis digital.",
-    "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop",
-    "githubUrl": "https://github.com/imtech/healthcare-app"
+    "imageUrl": "https://cdn.dribbble.com/userupload/46332461/file/0b9dfee2c5bddcbdfd0c0031781677a9.png?resize=1024x768&vertical=center",
+    "githubUrl": "https://github.com/imtech/healthcare-app",
+    "websiteUrl": "https://example.com/healthcare",
+    "techStack": ["Flutter", "Dart", "Firebase"],
+    "overview": "Aplikasi mobile yang menghubungkan pasien dengan dokter spesialis secara cepat dan aman. Memungkinkan konsultasi video jarak jauh, pemesanan obat, dan akses rekam medis digital dalam satu genggaman.",
+    "problem": [
+      "Sulitnya mendapatkan jadwal konsultasi dokter spesialis di rumah sakit.",
+      "Antrian panjang di fasilitas kesehatan yang memakan waktu.",
+      "Rekam medis fisik yang mudah hilang dan sulit diakses saat darurat."
+    ],
+    "solution": [
+      "Fitur booking jadwal dokter secara real-time dengan notifikasi pengingat.",
+      "Telemedicine video call berkualitas HD untuk konsultasi jarak jauh.",
+      "Penyimpanan rekam medis digital yang terenkripsi dan aman di cloud."
+    ],
+    "features": [
+      { "title": "Video Consultation", "description": "Konsultasi tatap muka virtual dengan kualitas video HD." },
+      { "title": "E-Prescription", "description": "Resep digital yang langsung terintegrasi dengan apotek mitra." },
+      { "title": "Appointment Booking", "description": "Sistem booking yang mudah dengan kalender ketersediaan dokter." },
+      { "title": "Health Record", "description": "Akses riwayat medis kapan saja dimana saja." }
+    ],
+    "methodology": [
+      { "title": "Discovery", "description": "Wawancara user dan define pain points pasien & dokter." },
+      { "title": "Design", "description": "Desain UI/UX yang ramah pengguna (terutama lansia)." },
+      { "title": "Development", "description": "Pengembangan aplikasi cross-platform dengan Flutter." },
+      { "title": "Integration", "description": "Integrasi API video call dan payment gateway." },
+      { "title": "Testing", "description": "User Acceptance Testing (UAT) dengan dokter dan pasien." }
+    ],
+    "challenges": [
+      "Memastikan koneksi video call stabil di kondisi jaringan minim.",
+      "Kepatuhan terhadap regulasi privasi data medis pengguna.",
+      "Desain antarmuka yang harus sangat mudah digunakan oleh semua kalangan usia."
+    ],
+    "gallery": [
+      { "title": "Dashboard Home", "imageUrl": "https://cdn.dribbble.com/userupload/46332461/file/0b9dfee2c5bddcbdfd0c0031781677a9.png?resize=1024x768&vertical=center" },
+      { "title": "Tablet View", "imageUrl": "https://cdn.dribbble.com/userupload/46332461/file/0b9dfee2c5bddcbdfd0c0031781677a9.png?resize=1024x768&vertical=center" },
+      { "title": "Mobile View", "imageUrl": "https://cdn.dribbble.com/userupload/46332461/file/0b9dfee2c5bddcbdfd0c0031781677a9.png?resize=1024x768&vertical=center" }
+    ]
   },
   {
     "id": 3,
-    "category": "UI/UX Design",
+    "category": "Web Development",
     "title": "Fintech Dashboard",
     "description": "Dashboard analitik untuk aplikasi fintech dengan visualisasi data yang intuitif dan laporan keuangan yang komprehensif.",
-    "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
-    "githubUrl": "https://github.com/imtech/fintech-dashboard"
+    "imageUrl": "https://cdn.dribbble.com/userupload/45527243/file/3621c7c844352b6146f6f8ee5260262f.jpg?resize=1024x768&vertical=center",
+    "githubUrl": "https://github.com/imtech/fintech-dashboard",
+    "websiteUrl": "https://example.com/fintech",
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    "overview": "Dashboard admin komprehensif untuk memantau transaksi finansial, perilaku pengguna, dan performa aplikasi fintech secara real-time. Dilengkapi dengan visualisasi data yang interaktif untuk memudahkan analisis.",
+    "problem": [
+      "Data transaksi tersebar di berbagai sistem yang tidak terintegrasi.",
+      "Laporan manual memakan waktu lama dan rentan kesalahan manusia.",
+      "Kesulitan dalam mendeteksi anomali atau fraud secara cepat."
+    ],
+    "solution": [
+      "Sentralisasi data dari berbagai sumber ke dalam satu dashboard terpadu.",
+      "Otomatisasi pembuatan laporan harian, mingguan, dan bulanan.",
+      "Sistem alert cerdas untuk mendeteksi pola transaksi mencurigakan."
+    ],
+    "features": [
+      { "title": "Real-time Analytics", "description": "Grafik dan chart interaktif yang update secara real-time." },
+      { "title": "Custom Reports", "description": "Pembuatan laporan yang dapat disesuaikan kebutuhan divisi." },
+      { "title": "User Management", "description": "Kontrol akses bertingkat untuk admin, manager, dan staff." },
+      { "title": "Fraud Detection", "description": "Notifikasi dini untuk aktivitas yang tidak wajar." }
+    ],
+    "methodology": [
+      { "title": "Requirement Gathering", "description": "Diskusi dengan tim finance dan risk management." },
+      { "title": "Prototyping", "description": "Pembuatan low-fi dan hi-fi dashboard mockups." },
+      { "title": "Frontend Dev", "description": "Implementasi komponen UI reusable dengan React & Tailwind." },
+      { "title": "Data Integration", "description": "Menghubungkan frontend dengan API backend yang kompleks." },
+      { "title": "Optimization", "description": "Memastikan rendering data cepat meski dataset besar." }
+    ],
+    "challenges": [
+      "Menangani rendering ribuan data point di chart tanpa lag.",
+      "Memastikan keamanan data sensitif finansial di sisi klien.",
+      "Desain responsif untuk tabel data yang kompleks."
+    ],
+    "gallery": [
+      { "title": "Dashboard Overview", "imageUrl": "https://cdn.dribbble.com/userupload/45527243/file/3621c7c844352b6146f6f8ee5260262f.jpg?resize=1024x768&vertical=center" },
+      { "title": "Tablet Dashboard", "imageUrl": "https://cdn.dribbble.com/userupload/45527243/file/3621c7c844352b6146f6f8ee5260262f.jpg?resize=1024x768&vertical=center" },
+      { "title": "Mobile Overview", "imageUrl": "https://cdn.dribbble.com/userupload/45527243/file/3621c7c844352b6146f6f8ee5260262f.jpg?resize=1024x768&vertical=center" }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Mobile Development",
+    "title": "E-Learning App",
+    "description": "Aplikasi edukasi interaktif yang memudahkan siswa belajar dari mana saja. Dilengkapi fitur video course, kuis real-time, dan tracking progress belajar yang komprehensif.",
+    "imageUrl": "https://cdn.dribbble.com/userupload/45871480/file/8f564bf9dd411586c81f8b397ba7f06b.png?resize=752x&vertical=center",
+    "githubUrl": "https://github.com/imtech/elearning-app",
+    "websiteUrl": "https://example.com/elearning",
+    "techStack": ["Flutter", "Dart", "Firebase"],
+    "overview": "Platform belajar online yang menawarkan materi pembelajaran interaktif, video berkualitas tinggi, dan kuis latih diri. Dirancang untuk meningkatkan engagement siswa dan mempermudah akses pendidikan berkualitas.",
+    "problem": [
+      "Materi pembelajaran konvensional seringkali membosankan dan pasif.",
+      "Siswa kesulitan melacak kemajuan belajar mereka sendiri.",
+      "Akses materi terbatas pada jam sekolah atau les offline."
+    ],
+    "solution": [
+      "Modul pembelajaran gamifikasi untuk meningkatkan motivasi belajar.",
+      "Dashboard progress siswa dengan visualisasi pencapaian yang jelas.",
+      "Akses materi 24/7 di mana saja melalui perangkat mobile."
+    ],
+    "features": [
+      { "title": "Interactive Quizzes", "description": "Kuis dengan feedback instan untuk menguji pemahaman." },
+      { "title": "Offline Mode", "description": "Unduh materi untuk belajar tanpa koneksi internet." },
+      { "title": "Progress Tracking", "description": "Monitor perkembangan belajar dengan statistik detail." },
+      { "title": "Discussion Forum", "description": "Ruang diskusi antara siswa dan mentor pengajar." }
+    ],
+    "methodology": [
+      { "title": "Research", "description": "Studi banding aplikasi edukasi populer dan survey siswa." },
+      { "title": "UX Design", "description": "Membuat user journey yang memotivasi (gamification)." },
+      { "title": "Mobile Dev", "description": "Coding aplikasi Android & iOS menggunakan Flutter." },
+      { "title": "Content Integration", "description": "Upload dan manajemen ribuan konten video & soal." },
+      { "title": "Beta Testing", "description": "Uji coba terbatas di beberapa sekolah pilot." }
+    ],
+    "challenges": [
+      "Manajemen cache video untuk hemat kuota internet pengguna.",
+      "Sinkronisasi data progress saat berpindah online/offline.",
+      "Membuat sistem kuis yang adaptif terhadap level kemampuan siswa."
+    ],
+    "gallery": [
+      { "title": "Dashboard Courses", "imageUrl": "https://cdn.dribbble.com/userupload/45871480/file/8f564bf9dd411586c81f8b397ba7f06b.png?resize=752x&vertical=center" },
+      { "title": "Tablet View", "imageUrl": "https://cdn.dribbble.com/userupload/45871480/file/8f564bf9dd411586c81f8b397ba7f06b.png?resize=752x&vertical=center" },
+      { "title": "Mobile View", "imageUrl": "https://cdn.dribbble.com/userupload/45871480/file/8f564bf9dd411586c81f8b397ba7f06b.png?resize=752x&vertical=center" }
+    ]
   }
 ]

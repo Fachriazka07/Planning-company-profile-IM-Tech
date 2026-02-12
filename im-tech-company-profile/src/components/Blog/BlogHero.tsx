@@ -1,17 +1,10 @@
 "use client"
 
 import React from 'react';
-<<<<<<< HEAD
-import { motion } from 'framer-motion';
-
-const AboutHero = () => {
-  const containerVariants = {
-=======
 import { motion, Variants } from 'framer-motion';
 
-const AboutHero = () => {
+const BlogHero = () => {
   const containerVariants: Variants = {
->>>>>>> 0ef19dc (chore: Update admin constants, animation component, and logs)
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -21,11 +14,7 @@ const AboutHero = () => {
     },
   };
 
-<<<<<<< HEAD
-  const itemVariants = {
-=======
   const itemVariants: Variants = {
->>>>>>> 0ef19dc (chore: Update admin constants, animation component, and logs)
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
@@ -34,7 +23,7 @@ const AboutHero = () => {
     <section
       className="relative w-full h-[371px] flex items-center overflow-hidden"
       style={{
-        backgroundImage: 'url(/images/about/background-about.png)',
+        backgroundImage: 'url(/images/background-page.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -55,31 +44,16 @@ const AboutHero = () => {
             />
 
             <div className="flex flex-col justify-center py-4">
-<<<<<<< HEAD
-              <motion.h1
-                variants={itemVariants}
-                className="text-[32px] font-semibold text-white mb-4 leading-tight"
-              >
-                Tentang Kami
-              </motion.h1>
-              <motion.p
-                variants={itemVariants}
-                className="text-[20px] font-normal text-white leading-relaxed font-poppins"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!
-              </motion.p>
-=======
               <motion.div variants={itemVariants}>
                 <h1 className="text-[32px] font-semibold text-white mb-4 leading-tight">
-                  Tentang Kami
+                  Insight & Artikel
                 </h1>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <p className="text-[20px] font-normal text-gray-300 leading-relaxed font-poppins">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt!
+                <p className="text-[20px] font-normal text-gray-300 leading-relaxed">
+                  Baca artikel terbaru kami tentang tren teknologi, tips pengembangan aplikasi, dan inovasi digital.
                 </p>
               </motion.div>
->>>>>>> 0ef19dc (chore: Update admin constants, animation component, and logs)
             </div>
           </div>
         </motion.div>
@@ -88,4 +62,4 @@ const AboutHero = () => {
   );
 };
 
-export default AboutHero;
+export default BlogHero;

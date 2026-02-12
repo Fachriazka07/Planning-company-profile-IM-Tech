@@ -33,7 +33,11 @@ const CoreValues = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.4 }}
+<<<<<<< HEAD
               className="flex flex-col items-start justify-center text-left p-6 bg-white rounded-[30px] border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.1)] transition-shadow h-[210px]"
+=======
+              className="flex flex-col items-start justify-center text-left p-6 bg-white rounded-[30px] border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.1)] transition-shadow min-h-[210px]"
+>>>>>>> 0ef19dc (chore: Update admin constants, animation component, and logs)
             >
               {/* Icon */}
               <div className="mb-4 text-[#00AAFF]">

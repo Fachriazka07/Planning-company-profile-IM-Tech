@@ -25,7 +25,7 @@ export function InsightSection() {
       <div className="container mx-auto px-6 lg:px-12">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <TitleGradient as="h2" className="text-3xl lg:text-4xl pb-2">
+          <TitleGradient as="h2" className="text-3xl lg:text-4xl pb-2 mx-auto">
             Insight & Artikel
           </TitleGradient>
           <p className="text-[20px] font-medium text-black max-w-3xl mx-auto mt-4">

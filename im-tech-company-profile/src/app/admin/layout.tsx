@@ -15,7 +15,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <aside className="w-64 bg-white border-r border-slate-200 flex flex-col fixed inset-y-0 left-0 z-50">
         {/* Logo */}
         <div className="h-20 flex items-center px-6">
-          <Link href="/dashboard" className="flex items-center gap-2">
+          <Link href="/admin/dashboard" className="flex items-center gap-2">
             <span className="text-2xl font-bold text-slate-900">Admin Panel</span>
           </Link>
         </div>

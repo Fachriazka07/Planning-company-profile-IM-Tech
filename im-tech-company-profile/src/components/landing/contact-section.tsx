@@ -58,10 +58,9 @@ export function ContactSection() {
                     className="min-h-[180px] border-gray-300 focus-visible:ring-[#00AAFF] rounded-lg resize-none"
                   />
                 </div>
-
                 <div>
-                  {/* BACKEND NOTE: Form ini nantinya akan dihubungkan ke API (misal: Resend/Nodemailer) atau database Supabase */}
-                  <Button className="w-full bg-black text-white hover:bg-gray-800 rounded-md py-6 text-base font-semibold transition-all duration-300 hover:scale-105">
+{/* BACKEND NOTE: Form ini nantinya akan dihubungkan ke API (misal: Resend/Nodemailer) atau database Supabase */}
+                  <Button className="w-full bg-black text-white hover:bg-gray-800 rounded-md px-10 py-6 text-base font-semibold transition-all duration-300 hover:scale-105">
                     Kirim
                   </Button>
                 </div>

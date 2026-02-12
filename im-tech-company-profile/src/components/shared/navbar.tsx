@@ -15,9 +15,14 @@ const navLinks = [
   { href: '#contact', label: 'Contact' },
 ];
 
+import { usePathname } from 'next/navigation';
+
 export function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  
+  const isBlog = pathname?.startsWith('/blog');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +35,13 @@ export function Navbar() {
 
   const scrollToSection = (href: string) => {
     setIsOpen(false);
+    
+    // If on blog page and link is a hash link (e.g. #about), redirect to home first
+    if (isBlog && href.startsWith('#')) {
+      window.location.href = `/${href}`;
+      return;
+    }
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -39,8 +51,13 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans',
-        isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'
+        'z-50 transition-all duration-300 font-sans',
+        isBlog 
+          ? 'relative bg-black py-4' 
+          : cn(
+              'fixed top-0 left-0 right-0',
+              isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'
+            )
       )}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">

@@ -28,7 +28,7 @@ export default function LoginPage() {
     // Simulate login and redirect
     setTimeout(() => {
       setIsLoading(false);
-      router.push('/dashboard');
+      router.push('/admin/dashboard');
     }, 1000);
   };
 

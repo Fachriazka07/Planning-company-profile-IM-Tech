@@ -9,32 +9,32 @@ export const APP_DESCRIPTION = 'Admin Dashboard untuk IM Tech Company Profile';
 export const ADMIN_NAV_ITEMS = [
   {
     title: 'Overview',
-    href: '/dashboard',
+    href: '/admin/dashboard',
     icon: 'LayoutDashboard',
   },
   {
     title: 'Portfolio',
-    href: '/portfolio',
+    href: '/admin/portfolio',
     icon: 'FolderKanban',
   },
   {
     title: 'Blog',
-    href: '/blog',
+    href: '/admin/blog',
     icon: 'FileText',
   },
   {
     title: 'Team',
-    href: '/team',
+    href: '/admin/team',
     icon: 'Users',
   },
   {
     title: 'Services',
-    href: '/services',
+    href: '/admin/services',
     icon: 'Briefcase',
   },
   {
     title: 'Contact Submission',
-    href: '/contacts',
+    href: '/admin/contacts',
     icon: 'Mail',
   },
 ] as const;

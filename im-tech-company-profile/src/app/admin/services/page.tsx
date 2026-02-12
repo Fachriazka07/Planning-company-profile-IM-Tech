@@ -88,7 +88,7 @@ export default function ServicesPage() {
           <p className="text-slate-500">Manage your services</p>
         </div>
         <Link
-          href="/services/new"
+          href="/admin/services/new"
           className="flex items-center gap-2 px-4 py-2 bg-black hover:bg-slate-800 text-white font-medium rounded-lg transition-colors"
         >
           <Plus className="w-4 h-4" />
@@ -148,7 +148,7 @@ export default function ServicesPage() {
                 <td className="px-6 py-4 whitespace-nowrap text-right">
                   <div className="flex justify-end gap-2">
                     <Link
-                      href={`/services/${service.id}`}
+                      href={`/admin/services/${service.id}`}
                       className="p-2 border border-slate-200 rounded-lg hover:bg-slate-50 text-slate-600 transition-colors"
                     >
                       <Pencil className="w-4 h-4" />

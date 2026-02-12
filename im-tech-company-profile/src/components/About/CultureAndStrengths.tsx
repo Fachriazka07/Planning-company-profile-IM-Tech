@@ -73,7 +73,11 @@ const CultureAndStrengths = () => {
       <div className="container mx-auto px-6 lg:px-24">
         {/* Section Title */}
         <div className="text-center mb-16 lg:mb-24">
+<<<<<<< HEAD
           <TitleGradient as="h2" className="text-3xl lg:text-[40px] font-bold">
+=======
+          <TitleGradient as="h2" className="text-3xl lg:text-[40px] font-bold mx-auto">
+>>>>>>> 0ef19dc (chore: Update admin constants, animation component, and logs)
             Keunggulan & Budaya Kami
           </TitleGradient>
         </div>

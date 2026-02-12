@@ -11,7 +11,7 @@ export function AboutSection() {
     return (
         <section id="about" className="bg-[#f9fafb] py-10 lg:py-14 font-sans">
             <div className="container mx-auto px-6 lg:px-12 text-center mb-8">
-                <TitleGradient as="h2" className="text-3xl lg:text-[32px] pb-2">
+                <TitleGradient as="h2" className="text-3xl lg:text-[32px] pb-2 mx-auto">
                     Tentang Kami
                 </TitleGradient>
                 <p className="text-[20px] font-medium text-[#433f3f] mt-2">

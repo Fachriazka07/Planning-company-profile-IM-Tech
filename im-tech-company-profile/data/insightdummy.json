@@ -4,27 +4,43 @@
     "date": "16 Januari 2026",
     "title": "Code editor terbaru dari Google menjadi standar baru",
     "excerpt": "Baru-baru ini perusahaan besar google merilis code editor terbaru buatan mereka sendiri.",
-    "imageUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&h=300&fit=crop"
+    "imageUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&h=300&fit=crop",
+    "category": "AI",
+    "author": { "name": "John Doe", "role": "Tech Lead", "avatar": "https://i.pravatar.cc/150?img=11" },
+    "stats": { "views": 20, "comments": 5 },
+    "content": "<p>Google kembali bikin gebrakan di dunia teknologi dengan merilis Google AntiGravity, sebuah code editor terbaru yang diklaim dirancang untuk meningkatkan produktivitas developer modern. Code editor ini menjadi langkah Google untuk menghadirkan pengalaman ngoding yang lebih ringan cepat dan terintegrasi langsung dengan ekosistem cloud mereka.</p><p>Google AntiGravity hadir dengan antarmuka yang clean dan fokus pada workflow developer. Editor ini mendukung berbagai bahasa pemrograman populer seperti JavaScript Python Go hingga Java serta dilengkapi fitur smart autocomplete real time error detection dan AI-powered code suggestion yang membantu developer menulis code lebih efisien.</p><p>Salah satu keunggulan utama AntiGravity adalah integrasi mendalam dengan layanan Google seperti Google Cloud Firebase dan GitHub. Developer dapat langsung melakukan sinkronisasi project debugging hingga deployment tanpa perlu berpindah tools. Selain itu AntiGravity juga dirancang ringan sehingga tetap optimal digunakan di perangkat dengan spesifikasi menengah.</p><p>Google menyebut bahwa AntiGravity dikembangkan berdasarkan feedback komunitas developer yang menginginkan code editor sederhana namun powerful. Dengan pendekatan modular developer bisa menyesuaikan editor sesuai kebutuhan workflow mereka mulai dari plugin hingga tema tampilan.</p><p>Meski masih dalam tahap awal rilis Google AntiGravity sudah menarik perhatian banyak developer dan diprediksi akan menjadi pesaing serius bagi code editor populer seperti VS Code dan Sublime Text. Google berencana terus mengembangkan fitur baru dan membuka dukungan komunitas untuk memperluas ekosistem AntiGravity ke depannya.</p>"
   },
   {
     "id": 2,
     "date": "28 Desember 2025",
     "title": "Perusahaan Nvidia tidak pernah berhenti berinovasi pada AI",
     "excerpt": "Baru-baru ini perusahaan besar Nvidia merilis AI terbaru buatan mereka sendiri yang menggemparkan dunia.",
-    "imageUrl": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&h=300&fit=crop"
+    "imageUrl": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&h=300&fit=crop",
+    "category": "AI",
+    "author": { "name": "Jane Smith", "role": "AI Researcher", "avatar": "https://i.pravatar.cc/150?img=5" },
+    "stats": { "views": 45, "comments": 12 },
+    "content": "<p>Nvidia kembali menunjukkan dominasinya di dunia kecerdasan buatan dengan serangkaian inovasi terbaru yang mereka umumkan minggu ini. Fokus utama mereka kali ini adalah pada chip AI generasi baru yang diklaim memiliki efisiensi daya 40% lebih baik namun dengan performa 2x lipat dari generasi sebelumnya.</p><p>Jensen Huang, CEO Nvidia, menekankan bahwa AI bukan lagi sekadar tren, melainkan fondasi baru bagi industri teknologi global. Chip terbaru ini dirancang khusus untuk menangani model bahasa besar (LLM) yang semakin kompleks, memungkinkan proses training dan inferensi yang jauh lebih cepat.</p><p>Selain hardware, Nvidia juga merilis toolkit software baru yang memudahkan developer untuk mengintegrasikan AI ke dalam aplikasi mereka. Langkah ini dilihat sebagai upaya Nvidia untuk memperkuat ekosistem mereka dan memastikan bahwa hardware mereka tetap menjadi pilihan utama bagi para pengembang AI di seluruh dunia.</p>"
   },
   {
     "id": 3,
     "date": "10 Juli 2026",
     "title": "Artificial Intelligence VS Machine Learning",
     "excerpt": "Perkembangan teknologi semakin pesat berkat peran AI tentu hal ini sangat diperdebatkan beberapa developer.",
-    "imageUrl": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=500&h=300&fit=crop"
+    "imageUrl": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=500&h=300&fit=crop",
+    "category": "Teknologi",
+    "author": { "name": "Michael Brown", "role": "Software Engineer", "avatar": "https://i.pravatar.cc/150?img=3" },
+    "stats": { "views": 100, "comments": 20 },
+    "content": "<p>Perdebatan antara definisi Artificial Intelligence (AI) dan Machine Learning (ML) seringkali membingungkan, bahkan bagi kalangan teknis sekalipun. Secara sederhana, AI adalah konsep payung yang mencakup segala teknik yang memungkinkan komputer meniru kecerdasan manusia, sedangkan ML adalah salah satu subset dari AI yang berfokus pada kemampuan mesin untuk belajar dari data tanpa diprogram secara eksplisit.</p><p>Dalam beberapa tahun terakhir, ML telah menjadi ujung tombak perkembangan AI. Algoritma ML kini digunakan di hampir setiap aspek kehidupan digital kita, mulai dari rekomendasi film di Netflix hingga deteksi penipuan di perbankan. Namun, AI mencakup lebih dari sekadar ML; ia juga mencakup sistem berbasis aturan (rule-based systems), robotika, dan pemrosesan bahasa alami (NLP).</p><p>Memahami perbedaan ini penting bagi perusahaan yang ingin mengadopsi teknologi ini. Seringkali, solusi yang dibutuhkan hanyalah analisis data sederhana, bukan sistem AI yang kompleks. Namun, dengan kemajuan Deep Learning (subset dari ML), batas antara apa yang bisa dilakukan mesin dan manusia semakin tipis setiap harinya.</p>"
   },
   {
     "id": 4,
     "date": "9 Maret 2026",
     "title": "Ronaldo dan Messi menjadi teman baik gara-gara suka coding",
     "excerpt": "Seluruh media di muka bumi dihebohkan dengan berita Ronaldo dan Messi pesepak bola terciduk sedang coding bareng.",
-    "imageUrl": "/images/insight/RONALDO.png"
+    "imageUrl": "/images/insight/RONALDO.png",
+    "category": "Design",
+    "author": { "name": "Sarah Connor", "role": "UX Designer", "avatar": "https://i.pravatar.cc/150?img=9" },
+    "stats": { "views": 200, "comments": 50 },
+    "content": "<p>Dunia maya kembali heboh, namun kali ini bukan karena gol indah atau trofi baru. Cristiano Ronaldo dan Lionel Messi, dua megabintang sepak bola yang selama ini dikenal sebagai rival abadi di lapangan hijau, tertangkap kamera sedang duduk bersama di depan laptop, tampak serius mendiskusikan baris-baris kode.</p><p>Foto yang viral tersebut memperlihatkan Messi sedang menunjuk layar sambil menjelaskan logika fungsi, sementara Ronaldo terlihat mengangguk paham sambil mengetik di keyboard. Usut punya usut, keduanya ternyata sedang berkolaborasi dalam sebuah proyek open-source untuk aplikasi manajemen statistik olahraga berbasis blockchain.</p><p>\"Coding melatih logika dan kesabaran, sama seperti sepak bola,\" ujar Ronaldo dalam sebuah wawancara imajiner. Messi menambahkan, \"Di lapangan kami rival, tapi di GitHub kami adalah kontributor yang saling melengkapi.\" Fenomena ini sontak membuat fans kedua kubu bersatu, membuktikan bahwa teknologi—dan coding—bisa menyatukan siapa saja, bahkan rival terbesar dalam sejarah olahraga.</p>"
   }
 ]

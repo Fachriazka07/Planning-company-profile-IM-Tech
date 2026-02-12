@@ -1,11 +1,7 @@
 'use client';
 
 import { useRef, useLayoutEffect, useState, useEffect } from 'react';
-<<<<<<< HEAD
-import { Check } from 'lucide-react';
-=======
 import { Icon } from '@iconify/react';
->>>>>>> 0ef19dc (chore: Update admin constants, animation component, and logs)
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TitleGradient } from '@/components/shared/title-gradient';
@@ -99,48 +95,39 @@ export function WorkflowSection() {
     <section
       ref={sectionRef}
       id="workflow"
-      className="font-sans py-[64px] lg:py-[128px] bg-[#F9FAFB]"
+      className="font-sans py-[64px] lg:py-[128px] bg-white"
     >
       <div className="container mx-auto px-6 lg:px-12">
         {/* Header Section */}
-        <div className="text-center mb-12 lg:mb-16">
-          <TitleGradient as="h2" className="text-3xl lg:text-4xl pb-3 leading-tight mx-auto">
-            Bagaimana Cara Kami Bekerja
-          </TitleGradient>
-          <p className="text-[18px] lg:text-[20px] font-medium text-black max-w-4xl mx-auto mt-4 leading-relaxed">
-            Proses kerja kami dirancang sederhana terarah dan fokus pada hasil agar setiap proyek
-            dapat berjalan lancar dan tepat sasaran
-          </p>
+        <div className="text-left mb-12 lg:mb-16">
+          <h2 className="text-2xl font-bold text-black pb-3 leading-tight">
+            Proses Kerja
+          </h2>
         </div>
 
         <div
           ref={containerRef}
-          className="bg-white border border-gray-200 rounded-3xl lg:rounded-full py-6 lg:py-5 px-8 lg:px-10 max-w-full lg:max-w-[800px] mx-auto shadow-sm relative overflow-hidden"
+          className="bg-white border border-gray-200 rounded-3xl lg:rounded-full py-6 lg:py-10 px-8 lg:px-10 w-full mx-auto shadow-sm relative overflow-hidden"
         >
           <div
             ref={lineRef}
             className="absolute bg-gray-300
-              lg:left-[8%] lg:right-[8%] lg:top-[28px] lg:h-[2px] lg:w-auto
+              lg:left-[5%] lg:right-[5%] lg:top-[50%] lg:h-[2px] lg:w-auto lg:-translate-y-1/2
               left-[3.15rem] top-10 bottom-10 w-[2px] lg:bottom-auto"
           />
 
-          <div className="flex flex-col lg:flex-row items-start lg:items-start justify-between gap-8 lg:gap-0 relative">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0 relative w-full">
             {steps.map((step, index) => (
               <div
                 key={step.id}
                 ref={(el) => { stepsRef.current[index] = el; }}
-                className="relative w-full lg:w-auto"
+                className="relative w-full lg:w-auto flex justify-center"
               >
-                <div className="flex lg:flex-col items-center gap-[11px] lg:gap-2 z-10 relative bg-white pr-2 lg:pr-0 lg:px-2">
-<<<<<<< HEAD
-                  <div className="w-[28px] h-[28px] rounded-full bg-black flex items-center justify-center flex-shrink-0 z-10 shadow-md">
-                    <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
-=======
+                <div className="flex lg:flex-col items-center gap-[11px] lg:gap-4 z-10 relative bg-white px-4 lg:px-6 py-2">
                   <div className="flex items-center justify-center flex-shrink-0 z-10 drop-shadow-md text-black">
                     <Icon icon="material-symbols:verified" width="48" height="48" />
->>>>>>> 0ef19dc (chore: Update admin constants, animation component, and logs)
                   </div>
-                  <span className="text-[16px] lg:text-[13px] font-semibold text-black whitespace-nowrap">
+                  <span className="text-[16px] lg:text-[16px] font-semibold text-black whitespace-nowrap mt-2">
                     {step.name}
                   </span>
                 </div>

@@ -86,7 +86,7 @@ const VisionMission = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
-                  className="flex items-center gap-4 p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-[124px]"
+className="flex items-center gap-4 p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-h-[124px]"
                 >
                   <div className="flex-shrink-0 text-[#155DFC]">
                     <CheckSquare className="w-7 h-7" strokeWidth={2} />
