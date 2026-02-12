@@ -28,8 +28,6 @@ const CultureAndStrengths = () => {
     "Bertanggung jawab terhadap setiap proses dan hasil kerja",
     "Berorientasi pada solusi bukan sekadar fitur",
   ];
-
-  // Using Unsplash images as requested
   const images = [
     "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80", // Team brainstorming
     "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80", // Coding close up
@@ -38,14 +36,11 @@ const CultureAndStrengths = () => {
     "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80", // Collaboration
     "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80", // Meeting
   ];
-
-  // Right Button -> Slides Front Image (Bottom)
   const handleFrontSlide = () => {
     setFrontDirection(1);
     setFrontIndex((prev) => (prev + 1) % images.length);
   };
 
-  // Left Button -> Slides Rear Image (Top)
   const handleRearSlide = () => {
     setRearDirection(-1);
     setRearIndex((prev) => (prev + 1) % images.length);
@@ -71,17 +66,14 @@ const CultureAndStrengths = () => {
   return (
     <section className="py-20 lg:py-32 bg-[#F9FAFB] overflow-hidden">
       <div className="container mx-auto px-6 lg:px-24">
-        {/* Section Title */}
         <div className="text-center mb-16 lg:mb-24">
-<TitleGradient as="h2" className="text-3xl lg:text-[40px] font-bold mx-auto">
+        <TitleGradient as="h2" className="text-3xl lg:text-[40px] font-bold mx-auto">
             Keunggulan & Budaya Kami
           </TitleGradient>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-16 items-start">
-          {/* Left Side: Content Lists */}
           <div className="w-full lg:w-5/12 space-y-12">
-            {/* Keunggulan */}
             <div>
               <h3 className="text-[20px] font-semibold text-[#575757] mb-6">
                 Keunggulan kami
@@ -127,13 +119,8 @@ const CultureAndStrengths = () => {
               </ul>
             </div>
           </div>
-
-          {/* Right Side: Stacked Image Slider */}
           <div className="w-full lg:w-7/12 relative h-[500px] flex items-center justify-center">
-
-            {/* Rear Group (Top Right-ish) */}
             <div className="absolute top-0 right-0 lg:right-4 w-[85%] lg:w-[75%] z-10 flex items-center gap-4 justify-end">
-              {/* Left Button -> Controls Rear Image */}
               <button
                 onClick={handleRearSlide}
                 className="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shadow-lg z-30 transform active:scale-95 transition-transform flex-shrink-0 pr-1"
@@ -169,11 +156,7 @@ const CultureAndStrengths = () => {
                 </div>
               </div>
             </div>
-
-            {/* Front Group (Bottom Left-ish) */}
             <div className="absolute bottom-0 left-0 lg:left-4 w-[85%] lg:w-[75%] z-20 flex items-center gap-4">
-
-              {/* Image Part */}
               <div className="relative w-full aspect-[16/10] bg-white p-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)] -rotate-1">
                 <div className="relative w-full h-full overflow-hidden">
                   <AnimatePresence initial={false} custom={frontDirection} mode="popLayout">
@@ -200,8 +183,6 @@ const CultureAndStrengths = () => {
                   </AnimatePresence>
                 </div>
               </div>
-
-              {/* Right Button -> Controls Front Image */}
               <button
                 onClick={handleFrontSlide}
                 className="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shadow-lg z-30 transform active:scale-95 transition-transform flex-shrink-0 pl-1"

@@ -22,6 +22,13 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   
+  // Pages where navbar should be static, white bg, black text
+  const isStaticPage = pathname?.startsWith('/blog') || 
+                       pathname === '/about' || 
+                       pathname?.startsWith('/portofolio') || 
+                       pathname?.startsWith('/services');
+                       
+  // Keep legacy isBlog variable just in case, or replace usages
   const isBlog = pathname?.startsWith('/blog');
 
   useEffect(() => {
@@ -36,8 +43,8 @@ export function Navbar() {
   const scrollToSection = (href: string) => {
     setIsOpen(false);
     
-    // If on blog page and link is a hash link (e.g. #about), redirect to home first
-    if (isBlog && href.startsWith('#')) {
+    // If on a static page and link is a hash link (e.g. #about), redirect to home first
+    if (isStaticPage && href.startsWith('#')) {
       window.location.href = `/${href}`;
       return;
     }
@@ -52,8 +59,8 @@ export function Navbar() {
     <header
       className={cn(
         'z-50 transition-all duration-300 font-sans',
-        isBlog 
-          ? 'relative bg-black py-4' 
+        isStaticPage 
+          ? 'relative bg-white py-4 border-b border-gray-100' 
           : cn(
               'fixed top-0 left-0 right-0',
               isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'
@@ -64,7 +71,10 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-bold text-3xl text-white transition-colors"
+          className={cn(
+            "flex items-center gap-2 font-bold text-3xl transition-colors",
+            isStaticPage ? "text-black" : "text-white"
+          )}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <span>IM Tech</span>
@@ -76,14 +86,22 @@ export function Navbar() {
             <button
               key={link.href}
               onClick={() => scrollToSection(link.href)}
-              className="text-[16px] font-medium text-white transition-colors hover:text-[#00AAFF]"
+              className={cn(
+                "text-[16px] font-medium transition-colors hover:text-[#00AAFF]",
+                isStaticPage ? "text-black" : "text-white"
+              )}
             >
               {link.label}
             </button>
           ))}
           <Button
             onClick={() => scrollToSection('#contact')}
-            className="rounded-md px-6 py-5 text-sm font-bold bg-white text-black transition-all duration-200 hover:bg-[#00AAFF] hover:text-white hover:scale-105"
+            className={cn(
+              "rounded-md px-6 py-5 text-sm font-bold transition-all duration-200 hover:scale-105",
+              isStaticPage 
+                ? "bg-black text-white hover:bg-gray-800" 
+                : "bg-white text-black hover:bg-[#00AAFF] hover:text-white"
+            )}
           >
             Get Started
           </Button>
@@ -92,7 +110,7 @@ export function Navbar() {
         {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon" className="text-white">
+            <Button variant="ghost" size="icon" className={isStaticPage ? "text-black" : "text-white"}>
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle menu</span>
             </Button>
