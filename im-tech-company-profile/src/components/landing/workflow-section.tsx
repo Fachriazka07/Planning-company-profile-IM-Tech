@@ -1,11 +1,7 @@
 'use client';
 
 import { useRef, useLayoutEffect, useState, useEffect } from 'react';
-<<<<<<< HEAD
-import { Check } from 'lucide-react';
-=======
 import { Icon } from '@iconify/react';
->>>>>>> 0ef19dc (chore: Update admin constants, animation component, and logs)
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TitleGradient } from '@/components/shared/title-gradient';
@@ -132,13 +128,8 @@ export function WorkflowSection() {
                 className="relative w-full lg:w-auto"
               >
                 <div className="flex lg:flex-col items-center gap-[11px] lg:gap-2 z-10 relative bg-white pr-2 lg:pr-0 lg:px-2">
-<<<<<<< HEAD
-                  <div className="w-[28px] h-[28px] rounded-full bg-black flex items-center justify-center flex-shrink-0 z-10 shadow-md">
-                    <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
-=======
                   <div className="flex items-center justify-center flex-shrink-0 z-10 drop-shadow-md text-black">
                     <Icon icon="material-symbols:verified" width="48" height="48" />
->>>>>>> 0ef19dc (chore: Update admin constants, animation component, and logs)
                   </div>
                   <span className="text-[16px] lg:text-[13px] font-semibold text-black whitespace-nowrap">
                     {step.name}
